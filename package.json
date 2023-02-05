@@ -1,0 +1,23 @@
+{
+  "name": "@otter13/dockers",
+  "version": "1.0.0",
+  "description": "Collection of docker images and tools",
+  "main": "index.js",
+  "scripts": {
+    "build": "docker build . -t limosmiley/node-18.14.0-cypress-9.4.1-amd --platform linux/amd64",
+    "test": "docker --version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otter13/dockers.git"
+  },
+  "keywords": [
+    "docker"
+  ],
+  "author": "Jin Li",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/otter13/dockers/issues"
+  },
+  "homepage": "https://github.com/otter13/dockers#readme"
+}
