@@ -34,7 +34,8 @@ RUN id
 # see https://on.cypress.io/caching
 ENV CYPRESS_CACHE_FOLDER=/root/.cache/Cypress
 RUN npm install -g "cypress@9.4.1"
-RUN cypress verify
+# RUN cypress verify
+
 
 # Cypress cache and installed version
 # should be in the root user's home folder
@@ -47,6 +48,14 @@ RUN cypress verify
 # we really only need to worry about the top folder, fortunately
 RUN ls -la /root
 RUN chmod 755 /root
+
+RUN apt-get install -y p7zip-full
+RUN echo "Manually install cypress 9.4.1"
+RUN mkdir -p /root/.cache/Cypress/9.4.1
+COPY cypress-9.4.1-m1-arm64.7z ./
+RUN rm -R /root/.cache/Cypress/9.4.1/
+RUN 7z x ./cypress-9.4.1-m1-arm64.7z -y -o/root/.cache/Cypress/9.4.1
+RUN chmod 755 /root/.cache/Cypress/9.4.1/Cypress/Cypress
 
 # always grab the latest Yarn
 # otherwise the base image might have old versions
