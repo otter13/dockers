@@ -4,7 +4,11 @@
   "description": "Collection of docker images and tools",
   "main": "index.js",
   "scripts": {
-    "build": "docker build . -t limosmiley/node-18.14.0-cypress-9.4.1-amd --platform linux/amd64",
+    "env": "echo \"node version\" & node -v    & echo \"npm version\" & npm -v    echo \"docker version\" & docker --version   echo \"docker context\" & docker context ls   & cypress info   & dpkg --print-architecture",
+    "list_config": "node -p process.env.dockerhub_account",
+    "use-linux-x": "docker buildx use desktop-linux",
+    "build": "docker build .  -t limosmiley/node-16.19.0-cypress-9.4.1 --platform linux/amd64",
+    "builx": "docker buildx build . -t limosmiley/node-16.19.0-cypress-9.4.1 --platform linux/arm64",
     "test": "docker --version"
   },
   "repository": {
@@ -15,7 +19,7 @@
     "docker"
   ],
   "author": "Jin Li",
-  "license": "AGPL-3.0-or-later",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/otter13/dockers/issues"
   },
