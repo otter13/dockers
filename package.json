@@ -7,8 +7,11 @@
     "env": "echo \"node version\" & node -v    & echo \"npm version\" & npm -v    echo \"docker version\" & docker --version   echo \"docker context\" & docker context ls   & cypress info   & dpkg --print-architecture",
     "list_config": "node -p process.env.dockerhub_account",
     "use-linux-x": "docker buildx use desktop-linux",
-    "build": "docker build .  -t limosmiley/node-16.19.0-cypress-9.4.1 --platform linux/amd64",
+    "build": "docker build . ",
+    "build-amd64": "npm run build -- --build-arg ARCH=amd64/ -t limosmiley/node-16.19.0-cypress-9.4.1:manifest-amd64",
+    "push-amd64": "docker push limosmiley/node-16.19.0-cypress-9.4.1:manifest-amd64",
     "builx": "docker buildx build . -t limosmiley/node-16.19.0-cypress-9.4.1 --platform linux/arm64",
+    "buildxpush": "docker buildx build --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --tag limosmiley/node-16.19.0-cypress-9.4.1:buildx-latest .",
     "push": "docker push limosmiley/node-16.19.0-cypress-9.4.1",
     "test": "docker --version"
   },
