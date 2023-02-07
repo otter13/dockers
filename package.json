@@ -8,6 +8,7 @@
     "list_config": "node -p process.env.dockerhub_account",
     "use-linux-x": "docker buildx use desktop-linux",
     "build": "docker build . -t limosmiley/node-16.19.0-cypress-9.4.1",
+    "buildx": "docker buildx build --platform linux/amd64,linux/arm64 -t limosmiley/node-16.19.0-cypress-9.4.1:latest --push .",
     "buildx-amd": "docker buildx build . -t limosmiley/node-16.19.0-cypress-9.4.1 --platform linux/amd64",
     "buildx-arm": "docker buildx build . -t limosmiley/node-16.19.0-cypress-9.4.1 --platform linux/arm64",
     "push": "docker push limosmiley/node-16.19.0-cypress-9.4.1",
