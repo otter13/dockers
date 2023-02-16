@@ -40,6 +40,14 @@ Push to
 npm run push
 ~~~
 
+## For building a vulnerability free image to build with npm
+~~~bash 
+cd vulnerability_free_builder
+docker build . -t tmp
+docker scan tmp    
+~~~
+
+
 ## Environment Variables  
 
 To run this project, you will need to add the following environment variables to your .env file  
