@@ -43,8 +43,8 @@ npm run push
 ## For building a vulnerability free image to build with npm
 ~~~bash 
 cd vulnerability_free_builder
-docker build . -t tmp
-docker scan tmp    
+docker build . -t limosmiley/vulfree-node-16.19-bulleye
+docker scan limosmiley/vulfree-node-16.19-bulleye    
 ~~~
 
 
