@@ -46,7 +46,8 @@ cd vulnerability_free_builder
 docker build . -t limosmiley/vulfree-node-16.19-bulleye
 docker scan limosmiley/vulfree-node-16.19-bulleye    
 ~~~
-
+The repo can be found at Docker Hub
+https://hub.docker.com/r/limosmiley/vulfree-node-16.19-bulleye
 
 ## Environment Variables  
 
